@@ -7,7 +7,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Name</span>
         </div>
-        <input type="text" class="form-control" id="first_name" name="first_name" minlength="2" formControlName="nombre" #it1><br><!--[(ngModel)]="datos[i].nombre"--><!--[class.is-invalid]="nombre.invalid" [class.is-valid]="nombre.valid"-->
+        <input type="text" class="form-control" id="first_name" name="first_name" minlength="2" maxlength="20" formControlName="nombre" #it1><br><!--[(ngModel)]="datos[i].nombre"--><!--[class.is-invalid]="nombre.invalid" [class.is-valid]="nombre.valid"-->
     </div>
     <div *ngIf="nombre.invalid" class="alert alert-danger mt-1 p-1">Invalid name</div>
     <!--The name is obligatory (2-20 characters)-->
