@@ -1,0 +1,183 @@
+<!-- <ul>
+    <li>Nombre: {{ MyNewForm.get('nombre') }}</li>
+    <li>Apellido1: {{ MyNewForm.get('apellido1') }}</li>
+    <li>Apellido2: {{ MyNewForm.get('apellido2') }}</li>
+  </ul> -->
+<!-- <tr>
+    <th>Name</th>
+    <th>First Surname</th>
+    <th>Second Surname</th>
+    <th>Email</th>
+    <th>Birthdate</th>
+    <th>Phone</th>
+    <th>Plan</th>
+    <th>IBAN</th>
+    <th>DNI</th>
+  </tr>
+  <ng-container *ngFor="let product of products">
+    
+    <tr>
+      <td>{{product.name}}</td>
+      <td>{{product.surname1}}</td>
+      <td>{{product.surname2}}</td>
+      <td>{{product.email}}</td>
+      <td>{{product.birthdate}}</td>
+      <td>{{product.phone}}</td>
+      <td>{{product.plan}}</td>
+      <td>{{product.IBAN}}</td>
+      <td>{{product.DNI}}</td>
+    </tr>
+  </ng-container> -->
+<!-- <div>Clients</div> -->
+<!-- <input type="text" [(ngModel)]="busqueda" placeholder="Buscar">
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+        <td>{{product.surname1}}</td>
+    </tr>
+    <tr *ngIf="products.length === 0">
+      <td colspan="2">No se encontraron resultados</td>
+    </tr>
+  </tbody>
+</table> -->
+<!-- <div class="container" ng-app="miApp" ng-controller="mainController">
+  
+  <form>
+	<input type="text" class="form-control" placeholder="Busqueda" ng-model="buscar">
+  </form>
+  
+  <table class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse">
+          Id 
+            <span ng-class="sortType == 'id' && !sortReverse ? 'arrow arrow-down' : sortType == 'id' && sortReverse ? 'arrow arrow-up': ''"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'nombre'; sortReverse = !sortReverse">
+            Nombre
+            <span ng-class="sortType == 'nombre' && !sortReverse ? 'arrow arrow-down' : sortType == 'nombre' && sortReverse ? 'arrow arrow-up': ''"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'apellido'; sortReverse = !sortReverse">
+          Apellido 
+            <span ng-class="sortType == 'apellido' && !sortReverse ? 'arrow arrow-down' : sortType == 'apellido' && sortReverse ? 'arrow arrow-up': ''"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'fecha'; sortReverse = !sortReverse">
+          Fecha
+            <span ng-class="sortType == 'fecha' && !sortReverse ? 'arrow arrow-down' : sortType == 'fecha' && sortReverse ? 'arrow arrow-up': ''"></span>
+          </a>
+        </td>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr ng-repeat="product in products | orderBy:sortType:sortReverse | filter:buscar">
+        <td>{{ product.name }}</td>
+        <td>{{ product.surname1 }}</td>
+        <td>{{ product.surname2 }}</td>
+      </tr>
+    </tbody>
+    
+  </table>  
+</div> -->
+<div class="background">
+<div class="form-group searcher">
+  <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="search"/>
+</div>
+
+<div class="table-responsive mx-3">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>First Surname</th>
+        <th>Second Surname</th>
+        <th>Email</th>
+        <th>Birthdate</th>
+        <th>Phone</th>
+        <th>Plan</th>
+        <th>IBAN</th>
+        <th>DNI</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of data">
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.surname1}}</td>
+        <td>{{product.surname2}}</td>
+        <td>{{product.email}}</td>
+        <td>{{product.birthdate}}</td>
+        <td>{{product.phone}}</td>
+        <td>{{product.plan}}</td>
+        <td>{{product.IBAN}}</td>
+        <td>{{product.DNI}}</td>
+      </tr>
+
+      <!-- <tr>
+          <td>Nombre</td>
+          <td>Primer apellido</td>
+          <td>Segundo apellido</td>
+          <td>email@ejemplo.com</td>
+          <td>01/01/2000</td>
+          <td>123456789</td>
+          <td>Plan A</td>
+          <td>ESXX XXXX XXXX XXXX XXXX XXXX</td>
+          <td>12345678A</td>
+        </tr> -->
+      <!-- <tr>
+          <td>{{ datos[0].nombre }}</td>
+          <td>{{ datos[0].apellido1 }}</td>
+          <td>{{ datos[0].apellido2 }}</td>
+          <td>{{ datos[0].email }}</td>
+          <td>{{ datos[0].birthdate }}</td>
+          <td>{{ datos[0].phone }}</td>
+          <td>{{ datos[0].plan }}</td>
+          <td>{{ datos[0].IBAN }}</td>
+          <td>{{ datos[0].DNI }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ datos[1].nombre }}</td>
+          <td>{{ datos[1].apellido1 }}</td>
+          <td>{{ datos[1].apellido2 }}</td>
+          <td>{{ datos[1].email }}</td>
+          <td>{{ datos[1].birthdate }}</td>
+          <td>{{ datos[1].phone }}</td>
+          <td>{{ datos[1].plan }}</td>
+          <td>{{ datos[1].IBAN }}</td>
+          <td>{{ datos[1].DNI }}</td>
+        </tr>
+        <tr>
+          <td>{{ datos[2].nombre }}</td>
+          <td>{{ datos[2].apellido1 }}</td>
+          <td>{{ datos[2].apellido2 }}</td>
+          <td>{{ datos[2].email }}</td>
+          <td>{{ datos[2].birthdate }}</td>
+          <td>{{ datos[2].phone }}</td>
+          <td>{{ datos[2].plan }}</td>
+          <td>{{ datos[2].IBAN }}</td>
+          <td>{{ datos[2].DNI }}</td>
+        </tr> -->
+      <!-- Aquí se pueden añadir más filas con información -->
+    </tbody>
+  </table>
+</div>
+</div>
+<!-- <div *ngIf="datosRecibidos">
+  </div> -->
+
+<!-- <p>Nombre: {{ myForm.value }}</p> -->

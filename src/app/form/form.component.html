@@ -1,0 +1,122 @@
+<div class="background">
+    <div class="text-center mb-3 fs-4 fw-bold">
+        Please, complete this form to sign up
+    </div>
+<form [formGroup]="MyNewForm" (ngSubmit)="Clic(MyNewForm.value)" (ngSubmit)="resetForm()" (ngSubmit)="addProduct()" class="mx-auto w-50"><!--[FormGroup]="MyNewForm"--> <!--(ngSubmit)="enviarDatos()" -->
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Name</span>
+        </div>
+        <input type="text" class="form-control" id="first_name" name="first_name" minlength="2" formControlName="nombre" #it1><br><!--[(ngModel)]="datos[i].nombre"--><!--[class.is-invalid]="nombre.invalid" [class.is-valid]="nombre.valid"-->
+    </div>
+    <div *ngIf="nombre.invalid" class="alert alert-danger mt-1 p-1">Invalid name</div>
+    <!--The name is obligatory (2-20 characters)-->
+
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">First Surname</span>
+        </div>
+        <input type="text" class="form-control" id="last_name" name="last_name" formControlName="apellido1" #it2><br><!--[(ngModel)]="datos[i].apellido1""-->
+    </div>
+
+    <div *ngIf="apellido1.invalid"
+        class="alert alert-danger mt-1 p-1">The surname is obligatory (2-20 characters)</div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Second Surname</span>
+        </div>
+        <input type="text" class="form-control" id="last_name2" name="last_name2" formControlName="apellido2" #it3><br><!--[(ngModel)]="datos[i].apellido2"-->
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Email</span>
+        </div>
+        <input type="email" class="form-control" id="email" name="email" formControlName="email" #it4 required email><br><!--[(ngModel)]="datos[i].email""-->
+    </div>
+    <div *ngIf="email.invalid" class="alert alert-danger mt-1 p-1">The email format is incorrect (Example: name@mail.com)</div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Birthdate</span>
+        </div>
+        <input type="date" class="form-control" id="fnacimiento" name="fnacimiento" formControlName="fnacimiento" #it5><br><!--[(ngModel)]="datos[i].fnacimiento"-->
+    </div>
+    <div *ngIf="fnacimiento.invalid" class="alert alert-danger mt-1 p-1">The birthdate is obligatory</div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Phone number</span>
+        </div>
+        <input type="number" class="form-control" id="phone" name="phone" formControlName="phone" #it6><br>
+    </div>
+    <div *ngIf="phone.invalid" class="alert alert-danger mt-1 p-1">Phone format incorrect (Example: 333 33 33 33)</div><!--[(ngModel)]="datos[i].phone"-->
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Plan</span>
+        </div>
+        <select class="form-control" [class.is-invalid]="plan.invalid" [class.is-valid]="plan.valid"
+            formControlName="plan" #it7> <!--[(ngModel)]="datos[i].plan"-->
+            <option selected value="Basic">Basic (24,95€)</option>
+            <option value="Plus">Plus (29,99€)</option>
+            <option value="Premium">Premium (39,99€)</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">IBAN</span>
+        </div>
+        <input type="text" class="form-control" id="IBAN" name="IBAN" formControlName="IBAN" #it8><br> <!--[(ngModel)]="datos[i].IBAN"-->
+    </div>
+    <div *ngIf="IBAN.invalid" class="alert alert-danger mt-1 p-1">IBAN format incorrect (Example: ES00 0000 0000 0000
+        0000 0000)</div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">DNI</span>
+        </div>
+        <input type="text" class="form-control" id="DNI" name="DNI" formControlName="DNI" #it9><br><!--[(ngModel)]="datos[i].DNI"-->
+    </div>
+    <div *ngIf="DNI.invalid" class="alert alert-danger mt-1 p-1">DNI format incorrect (Example: 12345678A)</div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="accept" formControlName="accept">
+
+        <label class="form-check-label">Confirm that you accept the Terms and Conditions</label>
+        <details>
+            <summary>Details: </summary>
+        <p>ACCESS TO THE FACILITIES:
+            The holder of the membership will have the right to enjoy The Gallery Gym facilities. Membership is personal and 
+            non-transferable, and therefore the user may not under any circumstances pass on their membership card or provide any information 
+            to any other person to gain access to the facilities. You will have the right to general use of the facilities, the fitness 
+            room and the group classes included in your membership and according to the class schedule displayed to the public in your gym, 
+            which will be established by the centre for free use and provided that there is sufficient capacity in the class.     
+            
+            MEMBERSHIP WRISTBAND:
+            The purchase of a membership card gives the user the status of member, so you will be given an accreditation bracelet with a chip, 
+            which will be property of The Gallery Gym. In case of loss or misplacement of the same, The Gallery Gym will issue a new one 
+            upon payment of 3€. Only persons over 18 years of age will be allowed to become members. Admission of 16 to 18 year olds will be 
+            permitted with written authorisation from parents or legal guardians.In the event that the membership has been purchased online, 
+            the wristband will be issued on the first day of the new member's visit to the facilities at the time of verification of all the 
+            data in their file.</p>
+        </details>
+
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-success" type="submit" [disabled]="MyNewForm.invalid">Send</button><!--(click)="enviarDatos()" -->
+    </div>
+
+    <div id="info">
+
+    </div>
+
+</form>
+<div class="backgroundUnder">
+.
+</div>
+</div>
