@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   }
 
   prohibitName(name: FormControl){
-    if (name.value === 'prohibido'){
+    if (name.value === 'hitler' || name.value === 'Hitler' || name.value === 'HITLER'){
       return { error : true}
     }
     else { return null; }
